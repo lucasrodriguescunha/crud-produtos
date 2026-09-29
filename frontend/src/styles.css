@@ -1,0 +1,284 @@
+/* You can add global styles to this file, and also import other style files */
+
+:root {
+  --bg: #f4f5f7;
+  --surface: #ffffff;
+  --border: #e2e5ea;
+  --text: #1a202c;
+  --muted: #64748b;
+  --primary: #16a34a;
+  --primary-hover: #15803d;
+  --primary-soft: #dcfce7;
+  --danger: #dc2626;
+  --danger-hover: #b91c1c;
+  --danger-soft: #fee2e2;
+  --radius: 10px;
+  --shadow: 0 1px 3px rgba(15, 23, 42, 0.08), 0 1px 2px rgba(15, 23, 42, 0.06);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0 0 8px;
+  font-weight: 600;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* app header */
+.app-header {
+  background: #0b1220;
+  color: #f8fafc;
+  padding: 18px 32px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: var(--shadow);
+}
+
+.app-header__brand {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+.app-header__badge {
+  font-size: 12px;
+  font-weight: 600;
+  color: #86efac;
+  background: rgba(34, 197, 94, 0.15);
+  border: 1px solid rgba(34, 197, 94, 0.4);
+  border-radius: 999px;
+  padding: 3px 10px;
+}
+
+.page {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 32px 24px 64px;
+}
+
+/* buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  padding: 9px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  line-height: 1;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: var(--primary-hover);
+}
+
+.btn-danger {
+  background: var(--danger-soft);
+  color: var(--danger);
+}
+
+.btn-danger:hover {
+  background: var(--danger);
+  color: #fff;
+}
+
+.btn-secondary {
+  background: var(--surface);
+  color: var(--text);
+  border-color: var(--border);
+}
+
+.btn-secondary:hover {
+  border-color: var(--muted);
+}
+
+/* card */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 28px;
+  max-width: 480px;
+}
+
+/* page header row */
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  gap: 16px;
+}
+
+.page-header h1 {
+  font-size: 24px;
+}
+
+/* search */
+.search {
+  margin-bottom: 20px;
+}
+
+.search input {
+  width: 100%;
+  max-width: 360px;
+}
+
+/* inputs */
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input:not([type]) {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 14px;
+  background: var(--surface);
+  color: var(--text);
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--primary-soft);
+}
+
+input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+}
+
+/* form */
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 18px;
+}
+
+.form-field label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.form-field-check {
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+.form-field-check label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.form-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+/* table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+th,
+td {
+  text-align: left;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+}
+
+th {
+  background: #f8fafc;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+tr:hover td {
+  background: #f8fafc;
+}
+
+td .row-actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* status badge */
+.badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.badge-on {
+  background: var(--primary-soft);
+  color: var(--primary-hover);
+}
+
+.badge-off {
+  background: #f1f5f9;
+  color: var(--muted);
+}
+
+.empty-state {
+  padding: 40px;
+  text-align: center;
+  color: var(--muted);
+}
