@@ -1,0 +1,45 @@
+<div class="page-header">
+  <h1>Produtos</h1>
+  <a routerLink="/novo" class="btn btn-primary">+ Novo produto</a>
+</div>
+
+<div class="search">
+  <input
+    type="text"
+    [(ngModel)]="searchName"
+    (input)="load()"
+    placeholder="Buscar por nome"
+  />
+</div>
+
+<ng-container *ngIf="products.length; else empty">
+  <table>
+    <tr>
+      <th>Nome</th>
+      <th>Preço</th>
+      <th>Estoque</th>
+      <th>Status</th>
+      <th></th>
+    </tr>
+    <tr *ngFor="let product of products">
+      <td>{{ product.name }}</td>
+      <td>{{ product.price | currency }}</td>
+      <td>{{ product.quantity }}</td>
+      <td>
+        <span class="badge" [class.badge-on]="product.status" [class.badge-off]="!product.status">
+          {{ product.status ? 'Ativo' : 'Inativo' }}
+        </span>
+      </td>
+      <td>
+        <div class="row-actions">
+          <a [routerLink]="['/editar', product.id]" class="btn btn-secondary">Editar</a>
+          <button (click)="remove(product.id!)" class="btn btn-danger">Excluir</button>
+        </div>
+      </td>
+    </tr>
+  </table>
+</ng-container>
+
+<ng-template #empty>
+  <div class="card empty-state">Nenhum produto encontrado.</div>
+</ng-template>
